@@ -45,7 +45,47 @@ VENUE_RE = re.compile(
 # Fallback keyword set, used when config.yaml is missing or PyYAML is unavailable.
 # Keys are section titles; values are arXiv query strings.
 DEFAULT_KEYWORDS = {
+    # General & sensor modality
     "SLAM": "SLAM",
+    "Visual SLAM / VO": (
+        '"visual SLAM" OR "visual odometry" OR "monocular SLAM" OR '
+        '"stereo SLAM" OR "RGB-D SLAM"'
+    ),
+    "LiDAR SLAM": (
+        '"LiDAR SLAM" OR "LiDAR odometry" OR "LiDAR-inertial" OR '
+        '"laser SLAM" OR "lidar-based SLAM"'
+    ),
+    "Visual-Inertial SLAM": (
+        '"visual-inertial odometry" OR "visual-inertial SLAM" OR "VIO" OR '
+        '"visual inertial navigation"'
+    ),
+    # Problem type
+    "Semantic SLAM": (
+        '"semantic SLAM" OR "object SLAM" OR "object-level SLAM" OR '
+        '("semantic mapping" AND SLAM)'
+    ),
+    "Dynamic SLAM": (
+        '"dynamic SLAM" OR ("dynamic environment" AND (SLAM OR "visual odometry")) '
+        'OR ("moving objects" AND SLAM)'
+    ),
+    "Active SLAM": (
+        '"active SLAM" OR ("active mapping" AND (SLAM OR robot OR exploration)) OR '
+        '("active perception" AND (SLAM OR robot)) OR '
+        '("autonomous exploration" AND (SLAM OR mapping OR robot))'
+    ),
+    "Continual / Lifelong SLAM": (
+        '"lifelong SLAM" OR "continual SLAM" OR "long-term SLAM" OR '
+        '"lifelong localization" OR "lifelong mapping"'
+    ),
+    "Collaborative / Multi-Robot SLAM": (
+        '"collaborative SLAM" OR "multi-robot SLAM" OR "multi-agent SLAM" OR '
+        '"distributed SLAM" OR "swarm SLAM"'
+    ),
+    # Modern representations
+    "Gaussian Splatting SLAM": (
+        '"Gaussian Splatting SLAM" OR "GS-SLAM" OR "Gaussian SLAM" OR '
+        '(("Gaussian Splatting" OR "3D Gaussian") AND (SLAM OR "visual odometry"))'
+    ),
     "Foundation-SLAM (VLA/VLM)": (
         '("vision-language-action" OR "vision language action" OR "VLA model" OR '
         '"vision-and-language navigation" OR "vision-language navigation" OR '
@@ -53,6 +93,12 @@ DEFAULT_KEYWORDS = {
         '(SLAM OR "visual odometry" OR "robot navigation" OR "autonomous navigation" '
         'OR "embodied navigation" OR "embodied agent" OR manipulation OR robotic)'
     ),
+    "NeRF / Implicit SLAM": (
+        '("NeRF" OR "neural radiance field" OR "neural implicit" OR '
+        '"implicit neural representation") AND '
+        '(SLAM OR "visual odometry" OR mapping OR reconstruction)'
+    ),
+    # Related computer-vision topics
     "SFM": 'SFM OR "Structure from Motion"',
     "Visual Localization": (
         '"Camera Localization" OR "Visual Localization" OR '
@@ -61,7 +107,6 @@ DEFAULT_KEYWORDS = {
     ),
     "Keypoint Detection": '"Keypoint Detection" OR "Feature Descriptor"',
     "Image Matching": '"Image Matching" OR "Keypoint Matching"',
-    "NeRF": "NeRF",
 }
 DEFAULT_MAX_RESULTS = 10
 

@@ -2,8 +2,9 @@
 #
 # `keywords` maps a section title (shown as the heading + table-of-contents entry
 # in the generated README) to an arXiv query string. arXiv query syntax supports
-# AND / OR / ANDNOT and quoted phrases. Add a line here to track a new topic —
-# no code change needed.
+# AND / OR / ANDNOT, quoted phrases, and parentheses for grouping. Add / remove a
+# line here to change the tracked topics — no code change needed. Section order in
+# the generated feed follows the order of this file.
 #
 # `max_results` is how many of the most-recently-submitted papers to fetch per
 # topic on each run. New papers are merged into the accumulated history, so this
@@ -12,7 +13,48 @@
 max_results: 10
 
 keywords:
+
+  # --- General & sensor modality -------------------------------------------
   SLAM: "SLAM"
+
+  "Visual SLAM / VO": >-
+    "visual SLAM" OR "visual odometry" OR "monocular SLAM" OR "stereo SLAM"
+    OR "RGB-D SLAM"
+
+  "LiDAR SLAM": >-
+    "LiDAR SLAM" OR "LiDAR odometry" OR "LiDAR-inertial" OR "laser SLAM"
+    OR "lidar-based SLAM"
+
+  "Visual-Inertial SLAM": >-
+    "visual-inertial odometry" OR "visual-inertial SLAM" OR "VIO"
+    OR "visual inertial navigation"
+
+  # --- Problem type ---------------------------------------------------------
+  "Semantic SLAM": >-
+    "semantic SLAM" OR "object SLAM" OR "object-level SLAM"
+    OR ("semantic mapping" AND SLAM)
+
+  "Dynamic SLAM": >-
+    "dynamic SLAM" OR ("dynamic environment" AND (SLAM OR "visual odometry"))
+    OR ("moving objects" AND SLAM)
+
+  "Active SLAM": >-
+    "active SLAM" OR ("active mapping" AND (SLAM OR robot OR exploration))
+    OR ("active perception" AND (SLAM OR robot))
+    OR ("autonomous exploration" AND (SLAM OR mapping OR robot))
+
+  "Continual / Lifelong SLAM": >-
+    "lifelong SLAM" OR "continual SLAM" OR "long-term SLAM"
+    OR "lifelong localization" OR "lifelong mapping"
+
+  "Collaborative / Multi-Robot SLAM": >-
+    "collaborative SLAM" OR "multi-robot SLAM" OR "multi-agent SLAM"
+    OR "distributed SLAM" OR "swarm SLAM"
+
+  # --- Modern representations -----------------------------------------------
+  "Gaussian Splatting SLAM": >-
+    "Gaussian Splatting SLAM" OR "GS-SLAM" OR "Gaussian SLAM"
+    OR (("Gaussian Splatting" OR "3D Gaussian") AND (SLAM OR "visual odometry"))
 
   # Foundation models + Vision-Language-Action / Vision-Language models applied
   # to SLAM, navigation and embodied robotics. Anchored on robotics terms so it
@@ -24,6 +66,12 @@ keywords:
     (SLAM OR "visual odometry" OR "robot navigation" OR "autonomous navigation"
     OR "embodied navigation" OR "embodied agent" OR manipulation OR robotic)
 
+  "NeRF / Implicit SLAM": >-
+    ("NeRF" OR "neural radiance field" OR "neural implicit"
+    OR "implicit neural representation") AND
+    (SLAM OR "visual odometry" OR mapping OR reconstruction)
+
+  # --- Related computer-vision topics ---------------------------------------
   SFM: 'SFM OR "Structure from Motion"'
 
   "Visual Localization": >-
@@ -33,5 +81,3 @@ keywords:
   "Keypoint Detection": '"Keypoint Detection" OR "Feature Descriptor"'
 
   "Image Matching": '"Image Matching" OR "Keypoint Matching"'
-
-  NeRF: "NeRF"
