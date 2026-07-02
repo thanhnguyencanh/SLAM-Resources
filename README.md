@@ -14,19 +14,16 @@ A curated collection of **SLAM (Simultaneous Localization and Mapping)** resourc
 
 ## 🔥 Daily arXiv Papers (auto-updated)
 
-A bot fetches the newest papers from arXiv every day and writes them into browsable tables. **[→ Open the latest papers](cv-arxiv-daily/README.md)**
+A bot fetches the newest papers from arXiv every day and writes them into browsable tables, organized into a SLAM taxonomy. **[→ Open the latest papers](cv-arxiv-daily/README.md)**
 
-| Topic | What it tracks |
+| Group | Categories |
 |---|---|
-| **SLAM** | Simultaneous localization and mapping, visual/LiDAR/inertial odometry |
-| **Foundation-SLAM (VLA/VLM)** | Foundation models, Vision-Language-Action & Vision-Language models for SLAM/robotics |
-| **SFM** | Structure-from-Motion |
-| **Visual Localization** | Camera relocalization, loop closure, visual place recognition, image retrieval |
-| **Keypoint Detection** | Feature detectors & descriptors |
-| **Image Matching** | Image / keypoint matching |
-| **NeRF** | Neural radiance fields & implicit representations |
+| **General & sensor** | SLAM · Visual SLAM / VO · LiDAR SLAM · Visual-Inertial SLAM |
+| **Problem type** | Semantic SLAM · Dynamic SLAM · Active SLAM · Continual / Lifelong SLAM · Collaborative / Multi-Robot SLAM |
+| **Modern representations** | Gaussian Splatting SLAM · Foundation-SLAM (VLA/VLM) · NeRF / Implicit SLAM |
+| **Related CV** | SFM · Visual Localization · Keypoint Detection · Image Matching |
 
-Keywords are configured in [`cv-arxiv-daily/config.yaml`](cv-arxiv-daily/config.yaml) — add a line to track a new topic.
+Each entry is tagged with its official code link (when the authors publish one) and its accepting venue (ICRA/IROS/CVPR/T-RO/…) when noted. Categories and their arXiv queries are configured in [`cv-arxiv-daily/config.yaml`](cv-arxiv-daily/config.yaml) — add, remove or retune a line to change what's tracked.
 
 ---
 
