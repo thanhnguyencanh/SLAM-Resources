@@ -1,268 +1,316 @@
 import datetime
-import requests
 import json
-import arxiv
 import os
+import re
 
-base_url = "https://arxiv.paperswithcode.com/api/v0/papers/"
+import arxiv
 
-def get_authors(authors, first_author = False):
-    output = str()
-    if first_author == False:
-        output = ", ".join(str(author) for author in authors)
-    else:
-        output = authors[0]
-    return output
+try:
+    import yaml  # PyYAML — optional; falls back to the built-in defaults below.
+except ImportError:  # pragma: no cover
+    yaml = None
+
+# ---------------------------------------------------------------------------
+# arXiv client.
+# Build ONE client and reuse it for the whole job so its built-in throttling and
+# retries apply across every query. `Search.results()` was deprecated in v1.2 and
+# REMOVED in arxiv v4.0.0 — the supported API is `client.results(search)`.
+# ---------------------------------------------------------------------------
+CLIENT = arxiv.Client(
+    page_size=100,      # results per API page (max 2000)
+    delay_seconds=3.0,  # arXiv asks for >= 3s between page fetches
+    num_retries=5,      # retry flaky / empty pages (known API instability)
+)
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+# Papers With Code was sunset by Meta on 2025-07-24 and its API is dead, so there
+# is no live "official code" service any more. Instead we best-effort pull a repo
+# link that the authors advertised in the arXiv comment / abstract — no API key,
+# no external host, no rate limit.
+GITHUB_RE = re.compile(r"https?://github\.com/[\w.\-]+/[\w.\-]+", re.IGNORECASE)
+
+# Top-tier venues authors commonly note in the arXiv "comment" field, e.g.
+# "Accepted to ICRA 2025", "CVPR2024", "To appear in T-RO".
+VENUE_RE = re.compile(
+    r"\b("
+    r"CVPR|ICCV|ECCV|NeurIPS|NIPS|ICML|ICLR|AAAI|"   # ML / vision conferences
+    r"ICRA|IROS|RSS|CoRL|"                            # robotics conferences
+    r"T-?RO|TRO|RA-?L|RAL|IJRR|T-?PAMI|TPAMI|"        # journals
+    r"SIGGRAPH|3DV|WACV|BMVC"
+    r")\b[\s'’]*(\d{2,4})?",
+    re.IGNORECASE,
+)
+
+# Fallback keyword set, used when config.yaml is missing or PyYAML is unavailable.
+# Keys are section titles; values are arXiv query strings.
+DEFAULT_KEYWORDS = {
+    "SLAM": "SLAM",
+    "Foundation-SLAM (VLA/VLM)": (
+        '("vision-language-action" OR "vision language action" OR "VLA model" OR '
+        '"vision-and-language navigation" OR "vision-language navigation" OR '
+        '"foundation model" OR "large language model" OR "vision-language model") AND '
+        '(SLAM OR "visual odometry" OR "robot navigation" OR "autonomous navigation" '
+        'OR "embodied navigation" OR "embodied agent" OR manipulation OR robotic)'
+    ),
+    "SFM": 'SFM OR "Structure from Motion"',
+    "Visual Localization": (
+        '"Camera Localization" OR "Visual Localization" OR '
+        '"Camera Re-localisation" OR "Loop Closure Detection" OR '
+        '"visual place recognition" OR "image retrieval"'
+    ),
+    "Keypoint Detection": '"Keypoint Detection" OR "Feature Descriptor"',
+    "Image Matching": '"Image Matching" OR "Keypoint Matching"',
+    "NeRF": "NeRF",
+}
+DEFAULT_MAX_RESULTS = 10
+
+
+def load_config():
+    """Read keywords / max_results from config.yaml, falling back to defaults."""
+    cfg_path = os.path.join(BASE_DIR, "config.yaml")
+    if yaml is not None and os.path.exists(cfg_path):
+        with open(cfg_path, "r", encoding="utf-8") as f:
+            cfg = yaml.safe_load(f) or {}
+        keywords = cfg.get("keywords") or DEFAULT_KEYWORDS
+        max_results = int(cfg.get("max_results", DEFAULT_MAX_RESULTS))
+        return keywords, max_results
+    return DEFAULT_KEYWORDS, DEFAULT_MAX_RESULTS
+
+
+def get_authors(authors, first_author=False):
+    if first_author is False:
+        return ", ".join(str(author) for author in authors)
+    return authors[0]
+
+
 def sort_papers(papers):
     output = dict()
-    keys = list(papers.keys())
-    keys.sort(reverse=True)
-    for key in keys:
+    for key in sorted(papers.keys(), reverse=True):
         output[key] = papers[key]
-    return output    
+    return output
 
-def get_daily_papers(topic,query="slam", max_results=2):
-    """
-    @param topic: str
-    @param query: str
-    @return paper_with_code: dict
-    """
 
-    # output 
-    content = dict() 
+def to_anchor(text):
+    """GitHub-style heading slug so the table of contents actually jumps."""
+    anchor = text.strip().lower().replace(" ", "-")
+    return re.sub(r"[^a-z0-9\-]", "", anchor)
+
+
+def find_code_link(result):
+    """Best-effort GitHub repo link from the arXiv comment / abstract."""
+    for text in (getattr(result, "comment", None) or "",
+                 getattr(result, "summary", "") or ""):
+        match = GITHUB_RE.search(text)
+        if match:
+            return match.group(0).rstrip(").,;")
+    return None
+
+
+# Canonical display casing for detected venues (default is upper-case).
+VENUE_CANONICAL = {
+    "NIPS": "NeurIPS", "NEURIPS": "NeurIPS",
+    "TRO": "T-RO", "T-RO": "T-RO",
+    "RAL": "RA-L", "RA-L": "RA-L",
+    "TPAMI": "T-PAMI", "T-PAMI": "T-PAMI",
+    "SIGGRAPH": "SIGGRAPH",
+}
+
+
+def find_venue(result):
+    """Detect an accepting conference / journal noted in the arXiv comment."""
+    comment = getattr(result, "comment", None) or ""
+    match = VENUE_RE.search(comment)
+    if not match:
+        return None
+    venue = match.group(1).upper()
+    venue = VENUE_CANONICAL.get(venue, venue)
+    year = match.group(2)
+    return f"{venue} {year}".strip() if year else venue
+
+
+def get_daily_papers(topic, query="slam", max_results=10):
+    """
+    @param topic: str  section title
+    @param query: str  arXiv query string
+    @return (data, data_web): dicts keyed by topic
+    """
+    content = dict()
     content_to_web = dict()
 
-    # content
-    output = dict()
-    
-    search_engine = arxiv.Search(
-        query = query,
-        max_results = max_results,
-        sort_by = arxiv.SortCriterion.SubmittedDate
+    search = arxiv.Search(
+        query=query,
+        max_results=max_results,
+        sort_by=arxiv.SortCriterion.SubmittedDate,
     )
 
-    cnt = 0
+    for result in CLIENT.results(search):
+        paper_id = result.get_short_id()
+        paper_title = result.title
+        paper_url = result.entry_id
+        paper_first_author = get_authors(result.authors, first_author=True)
+        update_time = result.updated.date()
 
-    for result in search_engine.results():
-
-        paper_id            = result.get_short_id()
-        paper_title         = result.title
-        paper_url           = result.entry_id
-        code_url            = base_url + paper_id
-        paper_abstract      = result.summary.replace("\n"," ")
-        paper_authors       = get_authors(result.authors)
-        paper_first_author  = get_authors(result.authors,first_author = True)
-        primary_category    = result.primary_category
-        publish_time        = result.published.date()
-        update_time         = result.updated.date()
-        comments            = result.comment
-
-
-      
-        print("Time = ", update_time ,
-              " title = ", paper_title,
-              " author = ", paper_first_author)
+        print("Time =", update_time, " title =", paper_title,
+              " author =", paper_first_author)
 
         # eg: 2108.09112v1 -> 2108.09112
-        ver_pos = paper_id.find('v')
-        if ver_pos == -1:
-            paper_key = paper_id
-        else:
-            paper_key = paper_id[0:ver_pos]    
+        ver_pos = paper_id.find("v")
+        paper_key = paper_id if ver_pos == -1 else paper_id[0:ver_pos]
 
-        try:
-            r = requests.get(code_url).json()
-            # source code link
-            if "official" in r and r["official"]:
-                cnt += 1
-                repo_url = r["official"]["url"]
-                content[paper_key] = f"|**{update_time}**|**{paper_title}**|{paper_first_author} et.al.|[{paper_id}]({paper_url})|**[link]({repo_url})**|\n"
-                content_to_web[paper_key] = f"- {update_time}, **{paper_title}**, {paper_first_author} et.al., Paper: [{paper_url}]({paper_url}), Code: **[{repo_url}]({repo_url})**"
+        repo_url = find_code_link(result)
+        venue = find_venue(result)
 
-            else:
-                content[paper_key] = f"|**{update_time}**|**{paper_title}**|{paper_first_author} et.al.|[{paper_id}]({paper_url})|null|\n"
-                content_to_web[paper_key] = f"- {update_time}, **{paper_title}**, {paper_first_author} et.al., Paper: [{paper_url}]({paper_url})"
+        code_cell = f"**[link]({repo_url})**" if repo_url else "null"
+        title_cell = f"**{paper_title}**"
+        if venue:
+            title_cell += f" `{venue}`"
 
-            # TODO: select useful comments
-            comments = None
-            if comments != None:
-                content_to_web[paper_key] = content_to_web[paper_key] + f", {comments}\n"
-            else:
-                content_to_web[paper_key] = content_to_web[paper_key] + f"\n"
+        content[paper_key] = (
+            f"|**{update_time}**|{title_cell}|{paper_first_author} et.al."
+            f"|[{paper_id}]({paper_url})|{code_cell}|\n"
+        )
 
-        except Exception as e:
-            print(f"exception: {e} with id: {paper_key}")
+        web = (f"- {update_time}, **{paper_title}**, {paper_first_author} et.al., "
+               f"Paper: [{paper_url}]({paper_url})")
+        if repo_url:
+            web += f", Code: **[{repo_url}]({repo_url})**"
+        if venue:
+            web += f", Venue: **{venue}**"
+        content_to_web[paper_key] = web + "\n"
 
-    data = {topic:content}
-    data_web = {topic:content_to_web}
-    return data,data_web 
+    return {topic: content}, {topic: content_to_web}
 
-def update_json_file(filename,data_all):
-    with open(filename,"r") as f:
+
+def update_json_file(filename, data_all):
+    with open(filename, "r") as f:
         content = f.read()
-        if not content:
-            m = {}
-        else:
-            m = json.loads(content)
-            
-    json_data = m.copy() 
-    
-    # update papers in each keywords         
+        m = {} if not content else json.loads(content)
+
+    json_data = m.copy()
+
     for data in data_all:
         for keyword in data.keys():
             papers = data[keyword]
-
             if keyword in json_data.keys():
                 json_data[keyword].update(papers)
             else:
                 json_data[keyword] = papers
 
-    with open(filename,"w") as f:
-        json.dump(json_data,f)
-    
-def json_to_md(filename,md_filename,
-               to_web = False, 
-               use_title = True, 
-               use_tc = True,
-               show_badge = True):
-    """
-    @param filename: str
-    @param md_filename: str
-    @return None
-    """
-    
-    DateNow = datetime.date.today()
-    DateNow = str(DateNow)
-    DateNow = DateNow.replace('-','.')
-    
-    with open(filename,"r") as f:
-        content = f.read()
-        if not content:
-            data = {}
-        else:
-            data = json.loads(content)
+    with open(filename, "w") as f:
+        json.dump(json_data, f)
 
-    # clean README.md if daily already exist else create it
-    with open(md_filename,"w+") as f:
+
+def json_to_md(filename, md_filename,
+               to_web=False,
+               use_title=True,
+               use_tc=True,
+               show_badge=True):
+    """Render the accumulated JSON into a Markdown file."""
+
+    DateNow = str(datetime.date.today()).replace("-", ".")
+
+    with open(filename, "r") as f:
+        content = f.read()
+        data = {} if not content else json.loads(content)
+
+    # clean the target file if it already exists, else create it
+    with open(md_filename, "w+"):
         pass
 
-    # write data into README.md
-    with open(md_filename,"a+") as f:
+    with open(md_filename, "a+") as f:
 
-        if (use_title == True) and (to_web == True):
+        if use_title and to_web:
             f.write("---\n" + "layout: default\n" + "---\n\n")
-        
-        if show_badge == True:
-            f.write(f"[![Contributors][contributors-shield]][contributors-url]\n")
-            f.write(f"[![Forks][forks-shield]][forks-url]\n")
-            f.write(f"[![Stargazers][stars-shield]][stars-url]\n")
-            f.write(f"[![Issues][issues-shield]][issues-url]\n\n")    
-                
-        if use_title == True:
+
+        if show_badge:
+            f.write("[![Contributors][contributors-shield]][contributors-url]\n")
+            f.write("[![Forks][forks-shield]][forks-url]\n")
+            f.write("[![Stargazers][stars-shield]][stars-url]\n")
+            f.write("[![Issues][issues-shield]][issues-url]\n\n")
+
+        if use_title:
             f.write("## Updated on " + DateNow + "\n\n")
         else:
             f.write("> Updated on " + DateNow + "\n\n")
-        
-        #Add: table of contents
-        if use_tc == True:
+
+        # table of contents
+        if use_tc:
             f.write("<details>\n")
             f.write("  <summary>Table of Contents</summary>\n")
             f.write("  <ol>\n")
             for keyword in data.keys():
-                day_content = data[keyword]
-                if not day_content:
+                if not data[keyword]:
                     continue
-                kw = keyword.replace(' ','-')      
-                f.write(f"    <li><a href=#{kw}>{keyword}</a></li>\n")
+                f.write(f"    <li><a href=#{to_anchor(keyword)}>{keyword}</a></li>\n")
             f.write("  </ol>\n")
             f.write("</details>\n\n")
-        
+
         for keyword in data.keys():
             day_content = data[keyword]
             if not day_content:
                 continue
-            # the head of each part
+            # section heading
             f.write(f"## {keyword}\n\n")
 
-            if use_title == True :
-                if to_web == False:
-                    f.write("|Publish Date|Title|Authors|PDF|Code|\n" + "|---|---|---|---|---|\n")
+            if use_title:
+                if not to_web:
+                    f.write("|Publish Date|Title|Authors|PDF|Code|\n"
+                            + "|---|---|---|---|---|\n")
                 else:
                     f.write("| Publish Date | Title | Authors | PDF | Code |\n")
                     f.write("|:---------|:-----------------------|:---------|:------|:------|\n")
 
-            # sort papers by date
+            # sort papers by date (newest first)
             day_content = sort_papers(day_content)
-        
-            for _,v in day_content.items():
+            for _, v in day_content.items():
                 if v is not None:
                     f.write(v)
 
-            f.write(f"\n")
-            
-            #Add: back to top
-            top_info = f"#Updated on {DateNow}"
-            top_info = top_info.replace(' ','-').replace('.','')
-            f.write(f"<p align=right>(<a href={top_info}>back to top</a>)</p>\n\n")
-        
-        if show_badge == True:
-            f.write(f"[contributors-shield]: https://img.shields.io/github/contributors/Vincentqyw/cv-arxiv-daily.svg?style=for-the-badge\n")
-            f.write(f"[contributors-url]: https://github.com/Vincentqyw/cv-arxiv-daily/graphs/contributors\n")
-            f.write(f"[forks-shield]: https://img.shields.io/github/forks/Vincentqyw/cv-arxiv-daily.svg?style=for-the-badge\n")
-            f.write(f"[forks-url]: https://github.com/Vincentqyw/cv-arxiv-daily/network/members\n")
-            f.write(f"[stars-shield]: https://img.shields.io/github/stars/Vincentqyw/cv-arxiv-daily.svg?style=for-the-badge\n")
-            f.write(f"[stars-url]: https://github.com/Vincentqyw/cv-arxiv-daily/stargazers\n")
-            f.write(f"[issues-shield]: https://img.shields.io/github/issues/Vincentqyw/cv-arxiv-daily.svg?style=for-the-badge\n")
-            f.write(f"[issues-url]: https://github.com/Vincentqyw/cv-arxiv-daily/issues\n\n")
-                
-    print("finished")        
+            f.write("\n")
 
- 
+            # back-to-top link
+            f.write(f"<p align=right>(<a href=#{to_anchor('Updated on ' + DateNow)}>back to top</a>)</p>\n\n")
+
+        if show_badge:
+            repo = "thanhnguyencanh/SLAM-Resources"
+            f.write(f"[contributors-shield]: https://img.shields.io/github/contributors/{repo}.svg?style=for-the-badge\n")
+            f.write(f"[contributors-url]: https://github.com/{repo}/graphs/contributors\n")
+            f.write(f"[forks-shield]: https://img.shields.io/github/forks/{repo}.svg?style=for-the-badge\n")
+            f.write(f"[forks-url]: https://github.com/{repo}/network/members\n")
+            f.write(f"[stars-shield]: https://img.shields.io/github/stars/{repo}.svg?style=for-the-badge\n")
+            f.write(f"[stars-url]: https://github.com/{repo}/stargazers\n")
+            f.write(f"[issues-shield]: https://img.shields.io/github/issues/{repo}.svg?style=for-the-badge\n")
+            f.write(f"[issues-url]: https://github.com/{repo}/issues\n\n")
+
+    print("finished")
+
 
 if __name__ == "__main__":
 
+    keywords, max_results = load_config()
+
     data_collector = []
-    data_collector_web= []
-    
-    keywords = dict()
-    keywords["SLAM"]                = "SLAM"
-    keywords["SFM"]                 = "SFM"+"OR"+"\"Structure from Motion\""
-    keywords["Visual Localization"] = "\"Camera Localization\"OR\"Visual Localization\"OR\"Camera Re-localisation\"OR\"Loop Closure Detection\"OR\"visual place recognition\"OR\"image retrieval\""
-    keywords["Keypoint Detection"]  = "\"Keypoint Detection\"OR\"Feature Descriptor\""
-    keywords["Image Matching"]      = "\"Image Matching\"OR\"Keypoint Matching\""
-    keywords["NeRF"]                = "NeRF"
+    data_collector_web = []
 
-    for topic,keyword in keywords.items():
- 
-        # topic = keyword.replace("\"","")
+    for topic, keyword in keywords.items():
         print("Keyword: " + topic)
-
-        data,data_web = get_daily_papers(topic, query = keyword, max_results = 10)
+        data, data_web = get_daily_papers(topic, query=keyword, max_results=max_results)
         data_collector.append(data)
         data_collector_web.append(data_web)
-
         print("\n")
 
-    # 1. update README.md file
-    json_file = "cv-arxiv-daily.json"
-    md_file   = "README.md"
-    # update json data
-    update_json_file(json_file,data_collector)
-    # json data to markdown
-    json_to_md(json_file,md_file)
+    # 1. update README.md
+    update_json_file(os.path.join(BASE_DIR, "cv-arxiv-daily.json"), data_collector)
+    json_to_md(os.path.join(BASE_DIR, "cv-arxiv-daily.json"),
+               os.path.join(BASE_DIR, "README.md"))
 
-    # 2. update docs/index.md file
-    json_file = "./docs/cv-arxiv-daily-web.json"
-    md_file   = "./docs/index.md"
-    # update json data
-    update_json_file(json_file,data_collector)
-    # json data to markdown
-    json_to_md(json_file, md_file, to_web = True)
+    # 2. update docs/index.md (GitHub Pages)
+    update_json_file(os.path.join(BASE_DIR, "docs", "cv-arxiv-daily-web.json"), data_collector)
+    json_to_md(os.path.join(BASE_DIR, "docs", "cv-arxiv-daily-web.json"),
+               os.path.join(BASE_DIR, "docs", "index.md"), to_web=True)
 
-    # 3. Update docs/wechat.md file
-    json_file = "./docs/cv-arxiv-daily-wechat.json"
-    md_file   = "./docs/wechat.md"
-    # update json data
-    update_json_file(json_file, data_collector_web)
-    # json data to markdown
-    json_to_md(json_file, md_file, to_web=False, use_title= False)
+    # 3. update docs/wechat.md
+    update_json_file(os.path.join(BASE_DIR, "docs", "cv-arxiv-daily-wechat.json"), data_collector_web)
+    json_to_md(os.path.join(BASE_DIR, "docs", "cv-arxiv-daily-wechat.json"),
+               os.path.join(BASE_DIR, "docs", "wechat.md"), to_web=False, use_title=False)

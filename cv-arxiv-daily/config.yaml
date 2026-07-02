@@ -1,0 +1,37 @@
+# Configuration for daily_arxiv.py
+#
+# `keywords` maps a section title (shown as the heading + table-of-contents entry
+# in the generated README) to an arXiv query string. arXiv query syntax supports
+# AND / OR / ANDNOT and quoted phrases. Add a line here to track a new topic —
+# no code change needed.
+#
+# `max_results` is how many of the most-recently-submitted papers to fetch per
+# topic on each run. New papers are merged into the accumulated history, so this
+# is a per-run window, not a cap on the total list.
+
+max_results: 10
+
+keywords:
+  SLAM: "SLAM"
+
+  # Foundation models + Vision-Language-Action / Vision-Language models applied
+  # to SLAM, navigation and embodied robotics. Anchored on robotics terms so it
+  # does not pull in generic vision/LLM papers.
+  "Foundation-SLAM (VLA/VLM)": >-
+    ("vision-language-action" OR "vision language action" OR "VLA model" OR
+    "vision-and-language navigation" OR "vision-language navigation" OR
+    "foundation model" OR "large language model" OR "vision-language model") AND
+    (SLAM OR "visual odometry" OR "robot navigation" OR "autonomous navigation"
+    OR "embodied navigation" OR "embodied agent" OR manipulation OR robotic)
+
+  SFM: 'SFM OR "Structure from Motion"'
+
+  "Visual Localization": >-
+    "Camera Localization" OR "Visual Localization" OR "Camera Re-localisation"
+    OR "Loop Closure Detection" OR "visual place recognition" OR "image retrieval"
+
+  "Keypoint Detection": '"Keypoint Detection" OR "Feature Descriptor"'
+
+  "Image Matching": '"Image Matching" OR "Keypoint Matching"'
+
+  NeRF: "NeRF"

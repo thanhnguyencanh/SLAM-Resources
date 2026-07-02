@@ -1,0 +1,63 @@
+name: cv-arxiv-daily
+
+# Auto-updates the arXiv paper feed under cv-arxiv-daily/.
+#
+# This file MUST live at .github/workflows/ in the repo ROOT — GitHub never reads
+# workflows from a subdirectory. A schedule only fires from the default branch.
+#
+# One-time setup on the fork:
+#   Settings -> Actions -> General -> Workflow permissions -> Read and write
+#   (or rely on the `permissions:` block below), then enable Actions on the fork.
+
+permissions:
+  contents: write
+
+on:
+  workflow_dispatch:        # allow manual runs from the Actions tab
+  schedule:
+    # Cron is UTC and best-effort (often delayed) — avoid the top of the hour.
+    - cron: "27 2 * * *"    # 02:27 UTC daily
+
+concurrency:
+  group: cv-arxiv-daily
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true   # keep GITHUB_TOKEN so we can push
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: cv-arxiv-daily/requirements.txt
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r cv-arxiv-daily/requirements.txt
+
+      - name: Run daily arxiv update
+        working-directory: cv-arxiv-daily
+        run: python daily_arxiv.py
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add cv-arxiv-daily/README.md \
+                  cv-arxiv-daily/cv-arxiv-daily.json \
+                  cv-arxiv-daily/docs/
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "chore: automatic update of arxiv papers"
+            git push
+          fi
