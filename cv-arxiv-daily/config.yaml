@@ -29,6 +29,15 @@ keywords:
     "visual-inertial odometry" OR "visual-inertial SLAM" OR "VIO"
     OR "visual inertial navigation"
 
+  "Event-based SLAM": >-
+    "event-based SLAM" OR "event camera SLAM" OR "event-based visual odometry"
+    OR ("event camera" AND (SLAM OR odometry OR "visual odometry"))
+
+  "Underwater / Radar SLAM": >-
+    "underwater SLAM" OR "sonar SLAM" OR "acoustic SLAM" OR "radar SLAM"
+    OR "radar odometry" OR "radar-inertial odometry"
+    OR ("underwater" AND (SLAM OR odometry))
+
   # --- Problem type ---------------------------------------------------------
   "Semantic SLAM": >-
     "semantic SLAM" OR "object SLAM" OR "object-level SLAM"
@@ -50,6 +59,11 @@ keywords:
   "Collaborative / Multi-Robot SLAM": >-
     "collaborative SLAM" OR "multi-robot SLAM" OR "multi-agent SLAM"
     OR "distributed SLAM" OR "swarm SLAM"
+
+  "Loop Closure / Place Recognition": >-
+    "loop closure" OR "loop closure detection" OR "place recognition"
+    OR "visual place recognition" OR "LiDAR place recognition"
+    OR "point cloud place recognition"
 
   # --- Modern representations -----------------------------------------------
   "Gaussian Splatting SLAM": >-
