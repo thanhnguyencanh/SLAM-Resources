@@ -3,7 +3,7 @@
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 
-## Updated on 2026.07.22
+## Updated on 2026.07.23
 
 <details>
   <summary>Table of Contents</summary>
@@ -34,6 +34,7 @@
 
 |Publish Date|Title|Authors|PDF|Code|
 |---|---|---|---|---|
+|**2026-07-22**|**DINS-IO: Learned Inertial Odometry via Differentiable INS Consistency**|Hao Qiao et.al.|[2607.20232v1](http://arxiv.org/abs/2607.20232v1)|null|
 |**2026-07-21**|**Identifying and Determining Atmospheric Parameters of BHB Stars Based on LAMOST DR11**|Xiao-Long Wang et.al.|[2607.19175v1](http://arxiv.org/abs/2607.19175v1)|null|
 |**2026-07-20**|**Lifelong Localization in Dynamic Indoor Environments Combining Odometry with Sparse Distance Sampling** `ICRA`|Michael M. Bilevich et.al.|[2607.17852v1](http://arxiv.org/abs/2607.17852v1)|null|
 |**2026-07-20**|**SLAM in Low-Light Environments: Project Report**|Oleh Basystyi et.al.|[2607.17699v1](http://arxiv.org/abs/2607.17699v1)|null|
@@ -1162,7 +1163,7 @@
 |**2021-10-03**|**Quadrotor Control on $SU(2)\times R^3$ with SLAM Integration**|Marcus Greiff et.al.|[2110.01099v1](http://arxiv.org/abs/2110.01099v1)|null|
 |**2021-10-02**|**Online Incremental Non-Gaussian Inference for SLAM Using Normalizing Flows**|Qiangqiang Huang et.al.|[2110.00876v1](http://arxiv.org/abs/2110.00876v1)|null|
 
-<p align=right>(<a href=#updated-on-20260722>back to top</a>)</p>
+<p align=right>(<a href=#updated-on-20260723>back to top</a>)</p>
 
 ## Visual SLAM / VO
 
@@ -1194,7 +1195,7 @@
 |**2026-06-18**|**Gaussian Process Prior Variational Autoencoder for Endoscopic Videos**|Ivan De Boi et.al.|[2606.19908v1](http://arxiv.org/abs/2606.19908v1)|null|
 |**2026-06-18**|**MMD-SLAM: Structure-Enhanced Multi-Meta Gaussian Distribution-Guided Visual SLAM** `ICRA 2026`|Fan Zhu et.al.|[2606.19874v1](http://arxiv.org/abs/2606.19874v1)|null|
 
-<p align=right>(<a href=#updated-on-20260722>back to top</a>)</p>
+<p align=right>(<a href=#updated-on-20260723>back to top</a>)</p>
 
 ## LiDAR SLAM
 
@@ -1217,16 +1218,17 @@
 |**2026-06-18**|**Motor Angular Speed Preintegration for Multirotor UAV State Estimation**|Matěj Petrlík et.al.|[2606.19929v1](http://arxiv.org/abs/2606.19929v1)|null|
 |**2026-06-24**|**FAST-LIVGO: A Degeneracy-Robust LiDAR-Inertial-Visual-GNSS Fusion Odometry** `IROS 2026`|Zhiyu Chen et.al.|[2606.19190v2](http://arxiv.org/abs/2606.19190v2)|null|
 
-<p align=right>(<a href=#updated-on-20260722>back to top</a>)</p>
+<p align=right>(<a href=#updated-on-20260723>back to top</a>)</p>
 
 ## Visual-Inertial SLAM
 
 |Publish Date|Title|Authors|PDF|Code|
 |---|---|---|---|---|
+|**2026-07-22**|**DINS-IO: Learned Inertial Odometry via Differentiable INS Consistency**|Hao Qiao et.al.|[2607.20232v1](http://arxiv.org/abs/2607.20232v1)|null|
 |**2026-07-21**|**NGPS: GPS-Denied Aerial Geo-Localization and 2.5D Reconstruction via Deep Satellite Image Matching and Multi-Rate Sensor Fusion** `IROS 2026`|Sanket Sharma et.al.|[2607.18936v1](http://arxiv.org/abs/2607.18936v1)|**[link](https://github.com/snktshrma/ngps_flight)**|
 |**2026-07-20**|**Does Robust VIO Need More Learning? Geometry-Verified Visual Measurements under Distribution Shift**|Yangyang Ning et.al.|[2607.17956v1](http://arxiv.org/abs/2607.17956v1)|null|
 |**2026-07-20**|**SLAM in Low-Light Environments: Project Report**|Oleh Basystyi et.al.|[2607.17699v1](http://arxiv.org/abs/2607.17699v1)|null|
-|**2026-07-19**|**Multi-Resolution Voxelized Map-Based Stereo Visual-Inertial Odometry** `IROS 2026`|Shuyi Pan et.al.|[2607.17332v1](http://arxiv.org/abs/2607.17332v1)|null|
+|**2026-07-22**|**Multi-Resolution Voxelized Map-Based Stereo Visual-Inertial Odometry** `IROS 2026`|Shuyi Pan et.al.|[2607.17332v2](http://arxiv.org/abs/2607.17332v2)|null|
 |**2026-07-14**|**Attitude Estimation Using Inertial and Barometric Measurements**|Melone Nyoba Tchonkeu et.al.|[2607.13254v1](http://arxiv.org/abs/2607.13254v1)|null|
 |**2026-07-12**|**Mapping Pamir: Multi-Session Visual-Inertial SLAM and 3D Reconstruction of an Underwater Shipwreck** `ICRA 2026`|Michalis Chatzispyrou et.al.|[2607.10925v1](http://arxiv.org/abs/2607.10925v1)|null|
 |**2026-07-07**|**SASGeo: Stability-Aware Semantic Map Localization for GNSS-Denied UAVs -- A Framework and Synthetic Proof of Concept**|Natalia Trukhina et.al.|[2607.07737v1](http://arxiv.org/abs/2607.07737v1)|null|
@@ -1245,7 +1247,7 @@
 |**2026-06-08**|**Dual Quaternion-Based Unscented Kalman Filter with Visual Inertial Odometry for Navigation in GPS-Denied Environments**|Mohamed Khalifa et.al.|[2606.09292v1](http://arxiv.org/abs/2606.09292v1)|null|
 |**2026-06-03**|**Uncertainty-Aware Adaptive Sensor Fusion for Autonomous Navigation**|Simegnew Yihunie Alaba et.al.|[2606.05437v1](http://arxiv.org/abs/2606.05437v1)|null|
 
-<p align=right>(<a href=#updated-on-20260722>back to top</a>)</p>
+<p align=right>(<a href=#updated-on-20260723>back to top</a>)</p>
 
 ## Event-based SLAM
 
@@ -1264,7 +1266,7 @@
 |**2026-03-15**|**eNavi: Event-based Imitation Policies for Low-Light Indoor Mobile Robot Navigation**|Prithvi Jai Ramesh et.al.|[2603.14397v1](http://arxiv.org/abs/2603.14397v1)|null|
 |**2026-03-09**|**Edged USLAM: Edge-Aware Event-Based SLAM with Learning-Based Depth Priors** `ICRA 2026`|Şebnem Sarıözkan et.al.|[2603.08150v1](http://arxiv.org/abs/2603.08150v1)|**[link](https://github.com/sebnem-byte/Edged-USLAM)**|
 
-<p align=right>(<a href=#updated-on-20260722>back to top</a>)</p>
+<p align=right>(<a href=#updated-on-20260723>back to top</a>)</p>
 
 ## Underwater / Radar SLAM
 
@@ -1285,7 +1287,7 @@
 |**2026-04-27**|**Pushing Radar Odometry Beyond the Pavement: Current Capabilities and Challenges**|Shaunak Kolhe et.al.|[2604.24674v1](http://arxiv.org/abs/2604.24674v1)|null|
 |**2026-04-24**|**Equivariant Filter for Radar-Inertial Odometry**|Giulio Delama et.al.|[2604.23033v1](http://arxiv.org/abs/2604.23033v1)|null|
 
-<p align=right>(<a href=#updated-on-20260722>back to top</a>)</p>
+<p align=right>(<a href=#updated-on-20260723>back to top</a>)</p>
 
 ## Semantic SLAM
 
@@ -1303,7 +1305,7 @@
 |**2026-05-11**|**Exploring 6D Object Pose Estimation with Deformation** `CVPR 2026`|Zhiqiang Liu et.al.|[2604.06720v2](http://arxiv.org/abs/2604.06720v2)|null|
 |**2026-05-23**|**M2H-MX: Multi-Task Semantic and Geometric Perception for Real-Time Monocular 3D Scene Graph Construction**|U. V. B. L. Udugama et.al.|[2603.29236v2](http://arxiv.org/abs/2603.29236v2)|null|
 
-<p align=right>(<a href=#updated-on-20260722>back to top</a>)</p>
+<p align=right>(<a href=#updated-on-20260723>back to top</a>)</p>
 
 ## Dynamic SLAM
 
@@ -1325,12 +1327,14 @@
 |**2026-04-28**|**Flow4DGS-SLAM: Optical Flow-Guided 4D Gaussian Splatting SLAM**|Yunsong Wang et.al.|[2604.22339v2](http://arxiv.org/abs/2604.22339v2)|null|
 |**2026-04-14**|**GGD-SLAM: Monocular 3DGS SLAM Powered by Generalizable Motion Model for Dynamic Environments** `ICRA 2026`|Yi Liu et.al.|[2604.12837v1](http://arxiv.org/abs/2604.12837v1)|null|
 
-<p align=right>(<a href=#updated-on-20260722>back to top</a>)</p>
+<p align=right>(<a href=#updated-on-20260723>back to top</a>)</p>
 
 ## Active SLAM
 
 |Publish Date|Title|Authors|PDF|Code|
 |---|---|---|---|---|
+|**2026-07-22**|**Improved Monitoring of Honey bee Colony Strength via Audio IoT Sensors, Modulation Tensorgrams and Recurrent Neural Networks**|Mahsa Abdollahi et.al.|[2607.20386v1](http://arxiv.org/abs/2607.20386v1)|null|
+|**2026-07-21**|**ModPack: An Extensible Teleoperation Interface for Bimanual Mobile Manipulation**|Joshua Citron et.al.|[2607.19479v1](http://arxiv.org/abs/2607.19479v1)|null|
 |**2026-07-17**|**Beyond Frontiers: Scene-Anomaly Guided Autonomous Exploration** `IROS 2026`|Akash Kumbar et.al.|[2607.15828v1](http://arxiv.org/abs/2607.15828v1)|null|
 |**2026-07-14**|**Unveiling Complex Collective Behaviors from Simple Rewards** `IROS 2026`|Yize Mi et.al.|[2607.12861v1](http://arxiv.org/abs/2607.12861v1)|null|
 |**2026-07-12**|**SensorPerch: Sense Wherever and Whenever it Matters**|Zhanxin Wu et.al.|[2607.10682v1](http://arxiv.org/abs/2607.10682v1)|null|
@@ -1347,7 +1351,7 @@
 |**2026-06-13**|**Exact, Efficient, and Safe Occlusion-Aware Planning Using AH-Polyhedrons**|Long Kiu Chung et.al.|[2606.15046v1](http://arxiv.org/abs/2606.15046v1)|null|
 |**2026-06-11**|**Active Perception for Radio Map Reconstruction in Uncharted 3D Air-Ground Environments**|Wenlihan Lu et.al.|[2606.12844v1](http://arxiv.org/abs/2606.12844v1)|null|
 
-<p align=right>(<a href=#updated-on-20260722>back to top</a>)</p>
+<p align=right>(<a href=#updated-on-20260723>back to top</a>)</p>
 
 ## Continual / Lifelong SLAM
 
@@ -1365,7 +1369,7 @@
 |**2024-07-22**|**Memory Management for Real-Time Appearance-Based Loop Closure Detection**|Mathieu Labbé et.al.|[2407.15890v1](http://arxiv.org/abs/2407.15890v1)|null|
 |**2024-03-28**|**Towards Long Term SLAM on Thermal Imagery** `IROS 2024`|Colin Keil et.al.|[2403.19885v1](http://arxiv.org/abs/2403.19885v1)|**[link](https://github.com/neufieldrobotics/IRSLAM_Baseline)**|
 
-<p align=right>(<a href=#updated-on-20260722>back to top</a>)</p>
+<p align=right>(<a href=#updated-on-20260723>back to top</a>)</p>
 
 ## Collaborative / Multi-Robot SLAM
 
@@ -1383,7 +1387,7 @@
 |**2026-03-01**|**riMESA: Consensus ADMM for Real-World Collaborative SLAM**|Daniel McGann et.al.|[2603.01178v1](http://arxiv.org/abs/2603.01178v1)|null|
 |**2026-02-18**|**Markerless Robot Detection and 6D Pose Estimation for Multi-Agent SLAM** `ICRA 2026`|Markus Rueggeberg et.al.|[2602.16308v1](http://arxiv.org/abs/2602.16308v1)|null|
 
-<p align=right>(<a href=#updated-on-20260722>back to top</a>)</p>
+<p align=right>(<a href=#updated-on-20260723>back to top</a>)</p>
 
 ## Loop Closure / Place Recognition
 
@@ -1419,7 +1423,7 @@
 |**2026-06-24**|**GeoFlow-SLAM++: A Robust Multi-Camera Visual-Inertial SLAM System with Relocalization**|Wei Feng et.al.|[2606.22051v2](http://arxiv.org/abs/2606.22051v2)|null|
 |**2026-06-17**|**Spatially Stratified Distillation for Heterogeneous Radar Place Recognition** `ICRA`|Sagun Singh Shrestha et.al.|[2606.18687v1](http://arxiv.org/abs/2606.18687v1)|null|
 
-<p align=right>(<a href=#updated-on-20260722>back to top</a>)</p>
+<p align=right>(<a href=#updated-on-20260723>back to top</a>)</p>
 
 ## Gaussian Splatting SLAM
 
@@ -1444,12 +1448,21 @@
 |**2026-06-18**|**MMD-SLAM: Structure-Enhanced Multi-Meta Gaussian Distribution-Guided Visual SLAM** `ICRA 2026`|Fan Zhu et.al.|[2606.19874v1](http://arxiv.org/abs/2606.19874v1)|null|
 |**2026-06-10**|**Triangle Splatting SLAM**|Nicholas Fry et.al.|[2605.31419v2](http://arxiv.org/abs/2605.31419v2)|null|
 
-<p align=right>(<a href=#updated-on-20260722>back to top</a>)</p>
+<p align=right>(<a href=#updated-on-20260723>back to top</a>)</p>
 
 ## Foundation-SLAM (VLA/VLM)
 
 |Publish Date|Title|Authors|PDF|Code|
 |---|---|---|---|---|
+|**2026-07-22**|**Closing the Lab-to-Store Gap: A Data-Efficient Post-Training and Experience-Driven Learning VLA Framework for Retail Humanoids**|Roger Sala Sisó et.al.|[2607.20345v1](http://arxiv.org/abs/2607.20345v1)|null|
+|**2026-07-22**|**SeededGrasp: Language-Guided Grasping in Complex Scenes with Multiple Embodiments**|Yang Xu et.al.|[2607.20207v1](http://arxiv.org/abs/2607.20207v1)|null|
+|**2026-07-22**|**ReferTrack: Referring Then Tracking for Embodied Visual Tracking**|Hanjing Ye et.al.|[2607.20061v1](http://arxiv.org/abs/2607.20061v1)|**[link](https://github.com/MedlarTea/referTrack)**|
+|**2026-07-22**|**LAVIFT: Latent-Action-Guided Vision Fine-Tuning for Surgical Interaction Recognition**|Jiajun Cheng et.al.|[2607.19889v1](http://arxiv.org/abs/2607.19889v1)|null|
+|**2026-07-22**|**KineBench: Benchmarking Embodied World Models via IDM-Free Kinematic Grounding**|Zeyu Liu et.al.|[2607.19876v1](http://arxiv.org/abs/2607.19876v1)|null|
+|**2026-07-22**|**SOPD-SocialNav: Selective On-Policy Distillation for Vision-Language Social Navigation**|Xinyu Zhang et.al.|[2607.19850v1](http://arxiv.org/abs/2607.19850v1)|null|
+|**2026-07-22**|**NavVerse: Benchmarking Indoor-to-Outdoor Embodied Navigation in Continuous Robot Simulation**|Junzhe Wu et.al.|[2607.19695v1](http://arxiv.org/abs/2607.19695v1)|null|
+|**2026-07-22**|**LENS: LLM-guided Environment Simplification for Planning and Control in Clutter**|Aileen Liao et.al.|[2607.19633v1](http://arxiv.org/abs/2607.19633v1)|null|
+|**2026-07-21**|**Twin Agent: Context Residual Compression for Privilege Separated Agents**|Zhanhao Hu et.al.|[2607.19595v1](http://arxiv.org/abs/2607.19595v1)|null|
 |**2026-07-21**|**Inference-Time Steering for Cross-Lingual Factual Consistency in LLMs**|Alexander Manev et.al.|[2607.19243v1](http://arxiv.org/abs/2607.19243v1)|null|
 |**2026-07-21**|**Agentic Real2Sim: Physics-based World Modeling with Vision-Language Agents**|Guanxiong Chen et.al.|[2607.19190v1](http://arxiv.org/abs/2607.19190v1)|null|
 |**2026-07-21**|**Athena-Brain Technical Report: An Efficient Robot Brain for General Intelligence and Embodied Interactio**|Jialian Li et.al.|[2607.18985v1](http://arxiv.org/abs/2607.18985v1)|null|
@@ -1581,12 +1594,14 @@
 |**2026-07-01**|**GEAR-Seg: A Grounded Explainable Agent for Reasoning Segmentation and Data Engine**|Yanan Wang et.al.|[2607.00544v1](http://arxiv.org/abs/2607.00544v1)|null|
 |**2026-07-01**|**Cross4D-JEPA: Dense Cross-modal Correspondence Distillation for 4D Point Cloud Representation Learning**|Trung Thanh Nguyen et.al.|[2607.00514v1](http://arxiv.org/abs/2607.00514v1)|null|
 
-<p align=right>(<a href=#updated-on-20260722>back to top</a>)</p>
+<p align=right>(<a href=#updated-on-20260723>back to top</a>)</p>
 
 ## NeRF / Implicit SLAM
 
 |Publish Date|Title|Authors|PDF|Code|
 |---|---|---|---|---|
+|**2026-07-22**|**PRIME-SVR: Physics-infoRmed Implicit Multi-Echo Slice-to-Volume Reconstruction for Fetal T2 mapping**|Busra Bulut et.al.|[2607.20136v1](http://arxiv.org/abs/2607.20136v1)|null|
+|**2026-07-22**|**SIINR: Structurally Informed Implicit Neural Representations for super-resolution with uncertainty quantification of clinical quality diffusion MRI datasets**|Tom Hendriks et.al.|[2607.19943v1](http://arxiv.org/abs/2607.19943v1)|null|
 |**2026-07-21**|**Fluid-SDF: Ultra-Lightweight and Editable Implicit Shape Representation via Differentiable Primitives**|Pradyumna Sripada et.al.|[2607.18646v1](http://arxiv.org/abs/2607.18646v1)|null|
 |**2026-07-20**|**EVOLVE: Efficient Learned Volume Compression with Variable-Rate Encoding on a Cross-Domain Database**|Kaiyuan Tang et.al.|[2607.18187v1](http://arxiv.org/abs/2607.18187v1)|null|
 |**2026-07-20**|**Lossless-INR: Lossless Volumetric Implicit Neural Representations**|Kaiyuan Tang et.al.|[2607.18150v1](http://arxiv.org/abs/2607.18150v1)|**[link](https://github.com/TouKaienn/Lossless-INR)**|
@@ -3023,7 +3038,7 @@
 |**2022-07-29**|**Neural Density-Distance Fields**|Itsuki Ueda et.al.|[2207.14455v1](http://arxiv.org/abs/2207.14455v1)|**[link](https://github.com/ueda0319/neddf)**|
 |**2022-07-27**|**Is Attention All NeRF Needs?**|Mukund Varma T et.al.|[2207.13298v1](http://arxiv.org/abs/2207.13298v1)|null|
 
-<p align=right>(<a href=#updated-on-20260722>back to top</a>)</p>
+<p align=right>(<a href=#updated-on-20260723>back to top</a>)</p>
 
 ## SFM
 
@@ -3317,19 +3332,22 @@
 |**2021-08-29**|**Solving Viewing Graph Optimization for Simultaneous Position and Rotation Registration**|Seyed-Mahdi Nasiri et.al.|[2108.12876v1](http://arxiv.org/abs/2108.12876v1)|null|
 |**2021-08-23**|**Burst Imaging for Light-Constrained Structure-From-Motion**|Ahalya Ravendran et.al.|[2108.09895v1](http://arxiv.org/abs/2108.09895v1)|null|
 
-<p align=right>(<a href=#updated-on-20260722>back to top</a>)</p>
+<p align=right>(<a href=#updated-on-20260723>back to top</a>)</p>
 
 ## Visual Localization
 
 |Publish Date|Title|Authors|PDF|Code|
 |---|---|---|---|---|
+|**2026-07-22**|**Diverse-Intent Multi-Turn Fashion Image Retrieval**|Mingqiang Tang et.al.|[2607.20291v1](http://arxiv.org/abs/2607.20291v1)|null|
+|**2026-07-22**|**RIM: A Retrieval-In-Matching Framework for Cross-Domain Global Visual Localization of UAVs**|Xin Li et.al.|[2607.20116v1](http://arxiv.org/abs/2607.20116v1)|null|
+|**2026-07-22**|**Using Hierarchical Controlled Vocabularies to Understand CLIP Retrieval Failures in Historical Photo Collections**|Ratan Sebastian et.al.|[2607.19836v1](http://arxiv.org/abs/2607.19836v1)|null|
 |**2026-07-21**|**PathAgentBench: Benchmarking Evidence-Seeking Vision-Language Models on Whole-Slide Pathology Image**|Dankai Liao et.al.|[2607.19261v1](http://arxiv.org/abs/2607.19261v1)|null|
 |**2026-07-21**|**CR-Refiner: An Object-Centric Optimal Transport Reranker for Edit-Conditioned 3D Scene Retrieval**|Hao Wu et.al.|[2607.19115v1](http://arxiv.org/abs/2607.19115v1)|null|
 |**2026-07-21**|**TAP-RAG: Task-Aware Policy Control for Long-Document Multimodal Question Answering**|Zhong Ji et.al.|[2607.18917v1](http://arxiv.org/abs/2607.18917v1)|null|
 |**2026-07-21**|**In-Context Learning for Wound Classification with Small Multimodal Language Models**|George Martvel et.al.|[2607.18819v1](http://arxiv.org/abs/2607.18819v1)|null|
 |**2026-07-21**|**Weakly Supervised Pathology-Informed Representation Learning for PET-Based Content Retrieval of Intra-Tumour Heterogeneity**|Rajat Vashistha et.al.|[2607.18762v1](http://arxiv.org/abs/2607.18762v1)|null|
 |**2026-07-21**|**Fusion Embedding: A Unified Embedding Space for Text, Image, Video, and Audio**|Abdul Basit Tonmoy et.al.|[2607.18666v1](http://arxiv.org/abs/2607.18666v1)|**[link](https://github.com/Eximius-Labs/fusion-embedding)**|
-|**2026-07-20**|**FSDBN: Foreground-Aware EEG--Visual Alignment via Dynamic Brain Networks**|Yiheng Liu et.al.|[2607.18344v1](http://arxiv.org/abs/2607.18344v1)|**[link](https://github.com/LiuYiheng1/FSDBN-EEG)**|
+|**2026-07-22**|**FSDBN: Foreground-Aware EEG-Visual Alignment via Dynamic Brain Networks**|Yiheng Liu et.al.|[2607.18344v2](http://arxiv.org/abs/2607.18344v2)|**[link](https://github.com/LiuYiheng1/FSDBN-EEG)**|
 |**2026-07-18**|**C3DIR: A Deep Learning 3-Dimensional Cloud Property Retrieval Scheme for Passive Satellite Imagers**|Charles H. White et.al.|[2607.16929v1](http://arxiv.org/abs/2607.16929v1)|null|
 |**2026-07-18**|**When Do Multimodal and Graph-Augmented RAG Help? A Controlled Evaluation for Document Question Answering**|Sokipriala Jonah et.al.|[2607.16604v1](http://arxiv.org/abs/2607.16604v1)|**[link](https://github.com/sokistar24/multimodal-graph-rag)**|
 |**2026-07-17**|**Are All Tokens Necessary for Visual Place Recognition? An Empirical Study of Token Reduction for Efficient Inference**|Tong Jin et.al.|[2607.15563v1](http://arxiv.org/abs/2607.15563v1)|**[link](https://github.com/Tong-Jin01/TokenReduction4VPR)**|
@@ -4345,12 +4363,13 @@
 |**2021-09-09**|**CrowdDriven: A New Challenging Dataset for Outdoor Visual Localization**|Ara Jafarzadeh et.al.|[2109.04527v1](http://arxiv.org/abs/2109.04527v1)|null|
 |**2021-09-09**|**Keeping an Eye on Things: Deep Learned Features for Long-Term Visual Localization**|Mona Gridseth et.al.|[2109.04041v1](http://arxiv.org/abs/2109.04041v1)|null|
 
-<p align=right>(<a href=#updated-on-20260722>back to top</a>)</p>
+<p align=right>(<a href=#updated-on-20260723>back to top</a>)</p>
 
 ## Keypoint Detection
 
 |Publish Date|Title|Authors|PDF|Code|
 |---|---|---|---|---|
+|**2026-07-22**|**Black-Box Optimization for Identifying and Inverting Audio Dynamic Range Control Effects**|Haoran Sun et.al.|[2607.19645v1](http://arxiv.org/abs/2607.19645v1)|null|
 |**2026-07-20**|**UMCP: A Unified Multi-Task Collaborative Perception Network for Luggage Trolley Pose Estimation**|Zhirui Sun et.al.|[2607.17950v1](http://arxiv.org/abs/2607.17950v1)|null|
 |**2026-06-19**|**An Empirical Study of Handcrafted Feature Learning and Convolutional Neural Networks for Facial Expression Recognition**|Chethiya Galkaduwa et.al.|[2607.15288v1](http://arxiv.org/abs/2607.15288v1)|null|
 |**2026-07-01**|**GKDT: General Keypoint Detection Transformer** `ECCV 2026`|Changsheng Lu et.al.|[2607.00752v1](http://arxiv.org/abs/2607.00752v1)|**[link](https://github.com/AlanLuSun/General-Keypoint-Detection)**|
@@ -4622,7 +4641,7 @@
 |**2021-08-31**|**A Novel Dataset for Keypoint Detection of quadruped Animals from Images**|Prianka Banik et.al.|[2108.13958v1](http://arxiv.org/abs/2108.13958v1)|**[link](https://github.com/prinik/awa-pose)**|
 |**2021-08-27**|**A Matching Algorithm based on Image Attribute Transfer and Local Features for Underwater Acoustic and Optical Images**|Xiaoteng Zhou et.al.|[2108.12151v1](http://arxiv.org/abs/2108.12151v1)|null|
 
-<p align=right>(<a href=#updated-on-20260722>back to top</a>)</p>
+<p align=right>(<a href=#updated-on-20260723>back to top</a>)</p>
 
 ## Image Matching
 
@@ -4879,7 +4898,7 @@
 |**2021-08-27**|**Matching Underwater Sonar Images by the Learned Descriptor Based on Style Transfer Method**|Xiaoteng Zhou et.al.|[2108.12072v1](http://arxiv.org/abs/2108.12072v1)|null|
 |**2021-08-26**|**Efficient Joint Object Matching via Linear Programming**|Antonio De Rosa et.al.|[2108.11911v1](http://arxiv.org/abs/2108.11911v1)|null|
 
-<p align=right>(<a href=#updated-on-20260722>back to top</a>)</p>
+<p align=right>(<a href=#updated-on-20260723>back to top</a>)</p>
 
 [contributors-shield]: https://img.shields.io/github/contributors/thanhnguyencanh/SLAM-Resources.svg?style=for-the-badge
 [contributors-url]: https://github.com/thanhnguyencanh/SLAM-Resources/graphs/contributors
