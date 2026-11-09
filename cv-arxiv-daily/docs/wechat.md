@@ -3,7 +3,7 @@
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 
-> Updated on 2026.11.08
+> Updated on 2026.11.09
 
 <details>
   <summary>Table of Contents</summary>
@@ -1298,7 +1298,7 @@
 - 2021-12-25, **Edge Robotics: Edge-Computing-Accelerated Multi-Robot Simultaneous Localization and Mapping**, Peng Huang et.al., Paper: [http://arxiv.org/abs/2112.13222v1](http://arxiv.org/abs/2112.13222v1)
 - 2021-12-24, **3D Point Cloud Reconstruction and SLAM as an Input**, Ziyu Li et.al., Paper: [http://arxiv.org/abs/2112.12907v1](http://arxiv.org/abs/2112.12907v1)
 
-<p align=right>(<a href=#updated-on-20261108>back to top</a>)</p>
+<p align=right>(<a href=#updated-on-20261109>back to top</a>)</p>
 
 ## Visual SLAM / VO
 
@@ -1381,10 +1381,11 @@
 - 2026-06-18, **Gaussian Process Prior Variational Autoencoder for Endoscopic Videos**, Ivan De Boi et.al., Paper: [http://arxiv.org/abs/2606.19908v1](http://arxiv.org/abs/2606.19908v1)
 - 2026-06-18, **MMD-SLAM: Structure-Enhanced Multi-Meta Gaussian Distribution-Guided Visual SLAM**, Fan Zhu et.al., Paper: [http://arxiv.org/abs/2606.19874v1](http://arxiv.org/abs/2606.19874v1), Venue: **ICRA 2026**
 
-<p align=right>(<a href=#updated-on-20261108>back to top</a>)</p>
+<p align=right>(<a href=#updated-on-20261109>back to top</a>)</p>
 
 ## LiDAR SLAM
 
+- 2026-11-06, **When to Trust the BIM: Identifiability-Aware LiDAR-Inertial--BIM Fusion under As-Built Deviations**, Yujie Zhang et.al., Paper: [http://arxiv.org/abs/2611.09045v1](http://arxiv.org/abs/2611.09045v1)
 - 2026-11-05, **FREE-LIVO: Physically Decoupled Yet Tightly Coupled LiDAR-Inertial-Visual Odometry**, Reon Tabata et.al., Paper: [http://arxiv.org/abs/2611.07463v1](http://arxiv.org/abs/2611.07463v1)
 - 2026-10-29, **Smartphone Indoor Localization Enhanced by Hierarchical Multi-Sensor Context Recognition**, Wenhui Feng et.al., Paper: [http://arxiv.org/abs/2610.39691v1](http://arxiv.org/abs/2610.39691v1)
 - 2026-10-29, **UMI-Live for In-The-Wild Bimanual Robotics Data Collection**, Govind Velamoor et.al., Paper: [http://arxiv.org/abs/2610.39385v1](http://arxiv.org/abs/2610.39385v1)
@@ -1444,7 +1445,7 @@
 - 2026-06-18, **Motor Angular Speed Preintegration for Multirotor UAV State Estimation**, Matěj Petrlík et.al., Paper: [http://arxiv.org/abs/2606.19929v1](http://arxiv.org/abs/2606.19929v1)
 - 2026-06-24, **FAST-LIVGO: A Degeneracy-Robust LiDAR-Inertial-Visual-GNSS Fusion Odometry**, Zhiyu Chen et.al., Paper: [http://arxiv.org/abs/2606.19190v2](http://arxiv.org/abs/2606.19190v2), Venue: **IROS 2026**
 
-<p align=right>(<a href=#updated-on-20261108>back to top</a>)</p>
+<p align=right>(<a href=#updated-on-20261109>back to top</a>)</p>
 
 ## Visual-Inertial SLAM
 
@@ -1509,7 +1510,7 @@
 - 2026-06-08, **Dual Quaternion-Based Unscented Kalman Filter with Visual Inertial Odometry for Navigation in GPS-Denied Environments**, Mohamed Khalifa et.al., Paper: [http://arxiv.org/abs/2606.09292v1](http://arxiv.org/abs/2606.09292v1)
 - 2026-06-03, **Uncertainty-Aware Adaptive Sensor Fusion for Autonomous Navigation**, Simegnew Yihunie Alaba et.al., Paper: [http://arxiv.org/abs/2606.05437v1](http://arxiv.org/abs/2606.05437v1)
 
-<p align=right>(<a href=#updated-on-20261108>back to top</a>)</p>
+<p align=right>(<a href=#updated-on-20261109>back to top</a>)</p>
 
 ## Event-based SLAM
 
@@ -1534,7 +1535,7 @@
 - 2026-03-15, **eNavi: Event-based Imitation Policies for Low-Light Indoor Mobile Robot Navigation**, Prithvi Jai Ramesh et.al., Paper: [http://arxiv.org/abs/2603.14397v1](http://arxiv.org/abs/2603.14397v1)
 - 2026-03-09, **Edged USLAM: Edge-Aware Event-Based SLAM with Learning-Based Depth Priors**, Şebnem Sarıözkan et.al., Paper: [http://arxiv.org/abs/2603.08150v1](http://arxiv.org/abs/2603.08150v1), Code: **[https://github.com/sebnem-byte/Edged-USLAM](https://github.com/sebnem-byte/Edged-USLAM)**, Venue: **ICRA 2026**
 
-<p align=right>(<a href=#updated-on-20261108>back to top</a>)</p>
+<p align=right>(<a href=#updated-on-20261109>back to top</a>)</p>
 
 ## Underwater / Radar SLAM
 
@@ -1570,7 +1571,7 @@
 - 2026-04-27, **Pushing Radar Odometry Beyond the Pavement: Current Capabilities and Challenges**, Shaunak Kolhe et.al., Paper: [http://arxiv.org/abs/2604.24674v1](http://arxiv.org/abs/2604.24674v1)
 - 2026-04-24, **Equivariant Filter for Radar-Inertial Odometry**, Giulio Delama et.al., Paper: [http://arxiv.org/abs/2604.23033v1](http://arxiv.org/abs/2604.23033v1)
 
-<p align=right>(<a href=#updated-on-20261108>back to top</a>)</p>
+<p align=right>(<a href=#updated-on-20261109>back to top</a>)</p>
 
 ## Semantic SLAM
 
@@ -1593,7 +1594,7 @@
 - 2026-05-11, **Exploring 6D Object Pose Estimation with Deformation**, Zhiqiang Liu et.al., Paper: [http://arxiv.org/abs/2604.06720v2](http://arxiv.org/abs/2604.06720v2), Venue: **CVPR 2026**
 - 2026-05-23, **M2H-MX: Multi-Task Semantic and Geometric Perception for Real-Time Monocular 3D Scene Graph Construction**, U. V. B. L. Udugama et.al., Paper: [http://arxiv.org/abs/2603.29236v2](http://arxiv.org/abs/2603.29236v2)
 
-<p align=right>(<a href=#updated-on-20261108>back to top</a>)</p>
+<p align=right>(<a href=#updated-on-20261109>back to top</a>)</p>
 
 ## Dynamic SLAM
 
@@ -1623,7 +1624,7 @@
 - 2026-04-28, **Flow4DGS-SLAM: Optical Flow-Guided 4D Gaussian Splatting SLAM**, Yunsong Wang et.al., Paper: [http://arxiv.org/abs/2604.22339v2](http://arxiv.org/abs/2604.22339v2)
 - 2026-04-14, **GGD-SLAM: Monocular 3DGS SLAM Powered by Generalizable Motion Model for Dynamic Environments**, Yi Liu et.al., Paper: [http://arxiv.org/abs/2604.12837v1](http://arxiv.org/abs/2604.12837v1), Venue: **ICRA 2026**
 
-<p align=right>(<a href=#updated-on-20261108>back to top</a>)</p>
+<p align=right>(<a href=#updated-on-20261109>back to top</a>)</p>
 
 ## Active SLAM
 
@@ -1700,7 +1701,7 @@
 - 2026-06-13, **Exact, Efficient, and Safe Occlusion-Aware Planning Using AH-Polyhedrons**, Long Kiu Chung et.al., Paper: [http://arxiv.org/abs/2606.15046v1](http://arxiv.org/abs/2606.15046v1)
 - 2026-06-11, **Active Perception for Radio Map Reconstruction in Uncharted 3D Air-Ground Environments**, Wenlihan Lu et.al., Paper: [http://arxiv.org/abs/2606.12844v1](http://arxiv.org/abs/2606.12844v1)
 
-<p align=right>(<a href=#updated-on-20261108>back to top</a>)</p>
+<p align=right>(<a href=#updated-on-20261109>back to top</a>)</p>
 
 ## Continual / Lifelong SLAM
 
@@ -1718,7 +1719,7 @@
 - 2024-07-22, **Memory Management for Real-Time Appearance-Based Loop Closure Detection**, Mathieu Labbé et.al., Paper: [http://arxiv.org/abs/2407.15890v1](http://arxiv.org/abs/2407.15890v1)
 - 2024-03-28, **Towards Long Term SLAM on Thermal Imagery**, Colin Keil et.al., Paper: [http://arxiv.org/abs/2403.19885v1](http://arxiv.org/abs/2403.19885v1), Code: **[https://github.com/neufieldrobotics/IRSLAM_Baseline](https://github.com/neufieldrobotics/IRSLAM_Baseline)**, Venue: **IROS 2024**
 
-<p align=right>(<a href=#updated-on-20261108>back to top</a>)</p>
+<p align=right>(<a href=#updated-on-20261109>back to top</a>)</p>
 
 ## Collaborative / Multi-Robot SLAM
 
@@ -1728,7 +1729,7 @@
 - 2026-07-07, **CILC: Cryptographically-secure Inter-agent Loop Closure Candidate Detection for Multi-Agent Collaborative SLAM**, Andrew Fishberg et.al., Paper: [http://arxiv.org/abs/2607.06700v1](http://arxiv.org/abs/2607.06700v1)
 - 2026-06-23, **Decentralized Pose Graph Riemannian Optimization for Object-based Multi-Robot SLAM**, Yixian Zhao et.al., Paper: [http://arxiv.org/abs/2606.24489v1](http://arxiv.org/abs/2606.24489v1)
 - 2026-06-22, **HERCULES: An Open-Source Simulation Framework for Heterogeneous Multi-Robot SLAM, Collaborative Perception, and Exploration**, Sandilya Sai Garimella et.al., Paper: [http://arxiv.org/abs/2606.22756v1](http://arxiv.org/abs/2606.22756v1)
-- 2026-10-16, **SGM-SLAM: Scene Graph Matching for Data-Efficient Distributed SLAM**, Yewei Huang et.al., Paper: [http://arxiv.org/abs/2606.16881v2](http://arxiv.org/abs/2606.16881v2)
+- 2026-11-06, **SGM-SLAM: Scene Graph Matching for Data-Efficient Distributed SLAM**, Yewei Huang et.al., Paper: [http://arxiv.org/abs/2606.16881v3](http://arxiv.org/abs/2606.16881v3)
 - 2026-05-14, **MR-SLAM: Immersive Spatial Supervision for Multi-Robot Mapping via Mixed Reality**, Prakash Aryan et.al., Paper: [http://arxiv.org/abs/2605.16432v1](http://arxiv.org/abs/2605.16432v1), Venue: **ICRA 2026**
 - 2026-05-10, **Above and Below: Heterogeneous Multi-robot SLAM Across Surface and Underwater Domains**, John McConnell et.al., Paper: [http://arxiv.org/abs/2605.09811v1](http://arxiv.org/abs/2605.09811v1)
 - 2026-04-01, **Compact Keyframe-Optimized Multi-Agent Gaussian Splatting SLAM**, Monica M. Q. Li et.al., Paper: [http://arxiv.org/abs/2604.00804v1](http://arxiv.org/abs/2604.00804v1), Code: **[https://github.com/lemonci/coko-slam](https://github.com/lemonci/coko-slam)**
@@ -1737,7 +1738,7 @@
 - 2026-03-01, **riMESA: Consensus ADMM for Real-World Collaborative SLAM**, Daniel McGann et.al., Paper: [http://arxiv.org/abs/2603.01178v1](http://arxiv.org/abs/2603.01178v1)
 - 2026-02-18, **Markerless Robot Detection and 6D Pose Estimation for Multi-Agent SLAM**, Markus Rueggeberg et.al., Paper: [http://arxiv.org/abs/2602.16308v1](http://arxiv.org/abs/2602.16308v1), Venue: **ICRA 2026**
 
-<p align=right>(<a href=#updated-on-20261108>back to top</a>)</p>
+<p align=right>(<a href=#updated-on-20261109>back to top</a>)</p>
 
 ## Loop Closure / Place Recognition
 
@@ -1842,7 +1843,7 @@
 - 2026-06-24, **GeoFlow-SLAM++: A Robust Multi-Camera Visual-Inertial SLAM System with Relocalization**, Wei Feng et.al., Paper: [http://arxiv.org/abs/2606.22051v2](http://arxiv.org/abs/2606.22051v2)
 - 2026-06-17, **Spatially Stratified Distillation for Heterogeneous Radar Place Recognition**, Sagun Singh Shrestha et.al., Paper: [http://arxiv.org/abs/2606.18687v1](http://arxiv.org/abs/2606.18687v1), Venue: **ICRA**
 
-<p align=right>(<a href=#updated-on-20261108>back to top</a>)</p>
+<p align=right>(<a href=#updated-on-20261109>back to top</a>)</p>
 
 ## Gaussian Splatting SLAM
 
@@ -1896,10 +1897,20 @@
 - 2026-06-18, **MMD-SLAM: Structure-Enhanced Multi-Meta Gaussian Distribution-Guided Visual SLAM**, Fan Zhu et.al., Paper: [http://arxiv.org/abs/2606.19874v1](http://arxiv.org/abs/2606.19874v1), Venue: **ICRA 2026**
 - 2026-06-10, **Triangle Splatting SLAM**, Nicholas Fry et.al., Paper: [http://arxiv.org/abs/2605.31419v2](http://arxiv.org/abs/2605.31419v2)
 
-<p align=right>(<a href=#updated-on-20261108>back to top</a>)</p>
+<p align=right>(<a href=#updated-on-20261109>back to top</a>)</p>
 
 ## Foundation-SLAM (VLA/VLM)
 
+- 2026-11-06, **On Agentic Manipulation Policies**, Chen Chen et.al., Paper: [http://arxiv.org/abs/2611.09892v1](http://arxiv.org/abs/2611.09892v1)
+- 2026-11-06, **Seeing What Matters: Benchmarking Task-Conditioned Actionable Spatial Belief for Manipulation**, Yina Jian et.al., Paper: [http://arxiv.org/abs/2611.09794v1](http://arxiv.org/abs/2611.09794v1)
+- 2026-11-06, **Language as Trait, Politeness as Strategy: Controlled Tests of Linguistic Effects in LLM Social-Deduction Agents**, Yuchen Li et.al., Paper: [http://arxiv.org/abs/2611.09768v1](http://arxiv.org/abs/2611.09768v1)
+- 2026-11-06, **FOSCAR: Accelerating Decode Attention over 2- and 4-Bit KV Caches through Affine Folding**, Donglin Zhuang et.al., Paper: [http://arxiv.org/abs/2611.09722v1](http://arxiv.org/abs/2611.09722v1), Code: **[https://github.com/FutureMLS-Lab/FOSCAR](https://github.com/FutureMLS-Lab/FOSCAR)**
+- 2026-11-06, **SURE:Spatiotemporal Uncertainty Representation for Efficient Vision-Language-Action Learning**, Jingye Zhang et.al., Paper: [http://arxiv.org/abs/2611.09684v1](http://arxiv.org/abs/2611.09684v1)
+- 2026-11-06, **ODEAction: From Predicting Chunks to Evolving Actions**, Qishen Wang et.al., Paper: [http://arxiv.org/abs/2611.09672v1](http://arxiv.org/abs/2611.09672v1)
+- 2026-11-06, **Logit Laundering: Evading Data-Use Auditing in Large Language Models**, Ruihan Hu et.al., Paper: [http://arxiv.org/abs/2611.09446v1](http://arxiv.org/abs/2611.09446v1)
+- 2026-11-06, **HiMEM: Hippocampus-Inspired Memory Consolidation, Pruning, and Composition for Vision-Language-Action Models in 3D Scenes**, Boran Zhao et.al., Paper: [http://arxiv.org/abs/2611.09355v1](http://arxiv.org/abs/2611.09355v1)
+- 2026-11-06, **ABHBench: Evaluating Moral Decision-Making of Foundation Models from an Agentic Perspective**, Chaoran Li et.al., Paper: [http://arxiv.org/abs/2611.09326v1](http://arxiv.org/abs/2611.09326v1), Venue: **NeurIPS 2026**
+- 2026-11-06, **Controllable Molecule Generation via Sparse Representation Editing: An Interpretability-Driven Perspective**, Zhuoran Li et.al., Paper: [http://arxiv.org/abs/2611.09235v1](http://arxiv.org/abs/2611.09235v1), Code: **[https://github.com/WanyuGroup/ICML2026_SpaRE](https://github.com/WanyuGroup/ICML2026_SpaRE)**
 - 2026-11-05, **OopsieRecover: Learning Transferable VLA Corrections from Semantic Interventions**, Arpit Bahety et.al., Paper: [http://arxiv.org/abs/2611.08462v1](http://arxiv.org/abs/2611.08462v1)
 - 2026-11-05, **VFlash: Fast, Accurate Visual Planning via Flash Primitive Decoding**, Yu-Cheng Chou et.al., Paper: [http://arxiv.org/abs/2611.08449v1](http://arxiv.org/abs/2611.08449v1)
 - 2026-11-05, **Failure Prediction and Classification in Vision-Language-Action Models Via Calibrated Latent Probing**, Michal P. Podolinsky et.al., Paper: [http://arxiv.org/abs/2611.08425v1](http://arxiv.org/abs/2611.08425v1)
@@ -2684,7 +2695,7 @@
 - 2026-07-01, **GEAR-Seg: A Grounded Explainable Agent for Reasoning Segmentation and Data Engine**, Yanan Wang et.al., Paper: [http://arxiv.org/abs/2607.00544v1](http://arxiv.org/abs/2607.00544v1)
 - 2026-07-01, **Cross4D-JEPA: Dense Cross-modal Correspondence Distillation for 4D Point Cloud Representation Learning**, Trung Thanh Nguyen et.al., Paper: [http://arxiv.org/abs/2607.00514v1](http://arxiv.org/abs/2607.00514v1)
 
-<p align=right>(<a href=#updated-on-20261108>back to top</a>)</p>
+<p align=right>(<a href=#updated-on-20261109>back to top</a>)</p>
 
 ## NeRF / Implicit SLAM
 
@@ -2694,8 +2705,8 @@
 - 2026-11-03, **Sparse-View 3D Coronary Reconstruction from Vessel Segmentations Using a Diffusion Prior**, Tianyuan Wang et.al., Paper: [http://arxiv.org/abs/2611.04604v1](http://arxiv.org/abs/2611.04604v1)
 - 2026-11-03, **Spectral Quantum Memory for Implicit Neural Representations**, Daniel A. Moroz-Broitman et.al., Paper: [http://arxiv.org/abs/2611.04574v1](http://arxiv.org/abs/2611.04574v1), Venue: **NeurIPS 2026**
 - 2026-10-31, **3D Neural Rendering for Automated Ultrasonic Laser Scans**, Thomas Pierson et.al., Paper: [http://arxiv.org/abs/2611.00527v1](http://arxiv.org/abs/2611.00527v1)
-- 2026-10-30, **FESTiVE: Self-calibrated Spatial-temporal Gradient Characterization for Non-cartesian Imaging on High Performance Systems**, Zachary Shah et.al., Paper: [http://arxiv.org/abs/2611.00472v1](http://arxiv.org/abs/2611.00472v1)
-- 2026-10-30, **MoRE-GS: Motion-Regime Experts for Future Gaussian Splatting**, Shima Salehi et.al., Paper: [http://arxiv.org/abs/2611.00375v1](http://arxiv.org/abs/2611.00375v1)
+- 2026-11-05, **FESTiVE: Self-calibrated Spatial-temporal Gradient Characterization for Non-cartesian Imaging on High Performance Systems**, Zachary Shah et.al., Paper: [http://arxiv.org/abs/2611.00472v2](http://arxiv.org/abs/2611.00472v2)
+- 2026-11-06, **MoRE-GS: Motion-Regime Experts for Future Gaussian Splatting**, Shima Salehi et.al., Paper: [http://arxiv.org/abs/2611.00375v2](http://arxiv.org/abs/2611.00375v2), Venue: **WACV 2027**
 - 2026-11-04, **TensorSSM: Memorizing Spatial Position in Dynamic State Space for Tensor Core Generation**, Sheng Zhang et.al., Paper: [http://arxiv.org/abs/2610.40871v2](http://arxiv.org/abs/2610.40871v2)
 - 2026-10-26, **DimFlow: Bidirectional Grid-Expert Learning for Dynamic Gaussian Reconstruction**, Gabriel Adineera et.al., Paper: [http://arxiv.org/abs/2610.34952v1](http://arxiv.org/abs/2610.34952v1)
 - 2026-10-25, **GNSS Anomaly Detection in Urban Canyons: A Comprehensive Survey of Multimodal Visibility Inference**, Abdelgabar Ahmed et.al., Paper: [http://arxiv.org/abs/2610.34468v1](http://arxiv.org/abs/2610.34468v1)
@@ -4242,7 +4253,7 @@
 - 2022-07-29, **Neural Density-Distance Fields**, Itsuki Ueda et.al., Paper: [http://arxiv.org/abs/2207.14455v1](http://arxiv.org/abs/2207.14455v1), Code: **[https://github.com/ueda0319/neddf](https://github.com/ueda0319/neddf)**
 - 2022-07-27, **Is Attention All NeRF Needs?**, Mukund Varma T et.al., Paper: [http://arxiv.org/abs/2207.13298v1](http://arxiv.org/abs/2207.13298v1)
 
-<p align=right>(<a href=#updated-on-20261108>back to top</a>)</p>
+<p align=right>(<a href=#updated-on-20261109>back to top</a>)</p>
 
 ## SFM
 
@@ -4605,10 +4616,13 @@
 - 2021-12-10, **MegBA: A High-Performance and Distributed Library for Large-Scale Bundle Adjustment**, Jie Ren et.al., Paper: [http://arxiv.org/abs/2112.01349v2](http://arxiv.org/abs/2112.01349v2), Code: **[https://github.com/megviirobot/megba](https://github.com/megviirobot/megba)**
 - 2021-11-11, **Multi-Resolution Elevation Mapping and Safe Landing Site Detection with Applications to Planetary Rotorcraft**, Pascal Schoppmann et.al., Paper: [http://arxiv.org/abs/2111.06271v1](http://arxiv.org/abs/2111.06271v1)
 
-<p align=right>(<a href=#updated-on-20261108>back to top</a>)</p>
+<p align=right>(<a href=#updated-on-20261109>back to top</a>)</p>
 
 ## Visual Localization
 
+- 2026-11-06, **CRTrack-Cap: A New Benchmark for Cross-View Dense Video Object Captioning**, Xiangqun Zhang et.al., Paper: [http://arxiv.org/abs/2611.09617v1](http://arxiv.org/abs/2611.09617v1)
+- 2026-11-06, **Look Closer, Align Better: Explicit Visual Attributes for Robust EEG-to-Image Decoding**, Ke Xiao et.al., Paper: [http://arxiv.org/abs/2611.09123v1](http://arxiv.org/abs/2611.09123v1)
+- 2026-11-06, **MetricPose: Flexible 3D Human Pose Estimation with Depth and Geometric Cues**, Shifan Zhu et.al., Paper: [http://arxiv.org/abs/2611.08954v1](http://arxiv.org/abs/2611.08954v1), Venue: **ICRA**
 - 2026-11-05, **How Far Can Untrained Neural Networks Go in Anomaly Detection? From Tables to Pixels**, Hyojun Yi et.al., Paper: [http://arxiv.org/abs/2611.08136v1](http://arxiv.org/abs/2611.08136v1)
 - 2026-11-05, **Towards Scalable Diagnostic-Driven Whole-Slide Image Retrieval for Pathology Archives**, Jingsong Liu et.al., Paper: [http://arxiv.org/abs/2611.07935v1](http://arxiv.org/abs/2611.07935v1)
 - 2026-11-05, **Degree-Equalized View-Graph Selection under Tight Pair Budgets**, Minhyeok Im et.al., Paper: [http://arxiv.org/abs/2611.07498v1](http://arxiv.org/abs/2611.07498v1)
@@ -5787,10 +5801,11 @@
 - 2021-09-20, **Efficient shape mapping through dense touch and vision**, Sudharshan Suresh et.al., Paper: [http://arxiv.org/abs/2109.09884v1](http://arxiv.org/abs/2109.09884v1)
 - 2021-09-15, **S3LAM: Structured Scene SLAM**, Mathieu Gonzalez et.al., Paper: [http://arxiv.org/abs/2109.07339v1](http://arxiv.org/abs/2109.07339v1)
 
-<p align=right>(<a href=#updated-on-20261108>back to top</a>)</p>
+<p align=right>(<a href=#updated-on-20261109>back to top</a>)</p>
 
 ## Keypoint Detection
 
+- 2026-11-06, **Direct Regression and Geometric Recovery for Event-based Spacecraft Pose Estimation**, Pruthvi Nandan Janga et.al., Paper: [http://arxiv.org/abs/2611.09717v1](http://arxiv.org/abs/2611.09717v1)
 - 2026-11-05, **GEKey: Learning Geodesic Eccentric 3D Keypoints via Self-Supervision**, Pierre Onghena et.al., Paper: [http://arxiv.org/abs/2611.07677v1](http://arxiv.org/abs/2611.07677v1), Code: **[https://github.com/Pierreoo/GEKey](https://github.com/Pierreoo/GEKey)**, Venue: **BMVC 2026**
 - 2026-10-29, **InfantNet: A Large Scale Dataset for Infant Body Pose and Shape Estimation**, Zhipeng Hui et.al., Paper: [http://arxiv.org/abs/2610.40467v1](http://arxiv.org/abs/2610.40467v1)
 - 2026-10-15, **Teaching DINOv3 About Partial 3D Geometry: A Self-Supervised Geometry-Aware Approach**, Viktoria Ehm et.al., Paper: [http://arxiv.org/abs/2610.21802v1](http://arxiv.org/abs/2610.21802v1)
@@ -6059,10 +6074,11 @@
 - 2021-12-19, **GPU optimization of the 3D Scale-invariant Feature Transform Algorithm and a Novel BRIEF-inspired 3D Fast Descriptor**, Jean-Baptiste Carluer et.al., Paper: [http://arxiv.org/abs/2112.10258v1](http://arxiv.org/abs/2112.10258v1), Code: **[https://github.com/carluerjb/3d_sift_cuda](https://github.com/carluerjb/3d_sift_cuda)**
 - 2021-12-16, **Masked Feature Prediction for Self-Supervised Visual Pre-Training**, Chen Wei et.al., Paper: [http://arxiv.org/abs/2112.09133v1](http://arxiv.org/abs/2112.09133v1)
 
-<p align=right>(<a href=#updated-on-20261108>back to top</a>)</p>
+<p align=right>(<a href=#updated-on-20261109>back to top</a>)</p>
 
 ## Image Matching
 
+- 2026-11-05, **Federated training performs as well as centralized for 3D Latent Diffusion for Diagnosis-Conditioned Brain MRI Synthesis**, Abhijith Shaji et.al., Paper: [http://arxiv.org/abs/2611.08771v1](http://arxiv.org/abs/2611.08771v1)
 - 2026-11-05, **USB Gym: A Gymnasium Testbed for Closed-Loop Ultrasound View Matching**, Thanapong Intharah et.al., Paper: [http://arxiv.org/abs/2611.08352v1](http://arxiv.org/abs/2611.08352v1), Code: **[https://github.com/tohnperfect/USBGym](https://github.com/tohnperfect/USBGym)**
 - 2026-11-03, **Manifold Embedding of Deep Image Features for Image Matching via Neural Adjoint Maps**, Nafie El Amrani et.al., Paper: [http://arxiv.org/abs/2611.05083v1](http://arxiv.org/abs/2611.05083v1), Code: **[https://github.com/NafieAmrani/NAMI](https://github.com/NafieAmrani/NAMI)**
 - 2026-11-01, **Accurate automated photo-identification of Near Eastern and European fire salamanders**, Maayan Yesharim et.al., Paper: [http://arxiv.org/abs/2611.01601v1](http://arxiv.org/abs/2611.01601v1)
@@ -6339,7 +6355,7 @@
 - 2021-11-29, **Zero-Shot Image-to-Text Generation for Visual-Semantic Arithmetic**, Yoad Tewel et.al., Paper: [http://arxiv.org/abs/2111.14447v1](http://arxiv.org/abs/2111.14447v1), Code: **[https://github.com/yoadtew/zero-shot-image-to-text](https://github.com/yoadtew/zero-shot-image-to-text)**
 - 2021-11-29, **Heterogeneous Visible-Thermal and Visible-Infrared Face Recognition using Unit-Class Loss and Cross-Modality Discriminator**, Usman Cheema et.al., Paper: [http://arxiv.org/abs/2111.14339v1](http://arxiv.org/abs/2111.14339v1)
 
-<p align=right>(<a href=#updated-on-20261108>back to top</a>)</p>
+<p align=right>(<a href=#updated-on-20261109>back to top</a>)</p>
 
 [contributors-shield]: https://img.shields.io/github/contributors/thanhnguyencanh/SLAM-Resources.svg?style=for-the-badge
 [contributors-url]: https://github.com/thanhnguyencanh/SLAM-Resources/graphs/contributors
